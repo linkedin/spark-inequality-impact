@@ -1,6 +1,6 @@
 # Setup for and build spark-inequality-impact
 
-Revised 2020 May 20.
+Revised 2020 May 22.
 
 Tested on lubuntu 18.10 on ThinkPad W530, i7-3720QM @ 2.6 GHz, 4 cores, 24GB,<br>
 and on MacBook Pro, 2.4 GHz 8-core intel core i9, 32 GB, OS 10.15.2 and 10.15.4.
