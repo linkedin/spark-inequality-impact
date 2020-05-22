@@ -1,0 +1,14 @@
+spark-inequality-impact/build/*
+!spark-inequality-impact/build/libs
+
+.DS_Store
+.gradle/
+metastore_db/
+spark-warehouse
+*~
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc

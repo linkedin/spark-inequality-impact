@@ -1,0 +1,13 @@
+subprojects {
+  plugins.withType(JavaPlugin) {
+    sourceCompatibility = 1.8
+  }
+
+  plugins.withType(ScalaPlugin) {
+    tasks.withType(ScalaCompile) {
+      scalaCompileOptions.with {
+        additionalParameters = ['-deprecation', '-Xlint']
+      }
+    }
+  }
+}

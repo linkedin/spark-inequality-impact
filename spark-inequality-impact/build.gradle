@@ -1,0 +1,32 @@
+plugins {
+  id 'scala'
+  id "cz.augi.gradle.wartremover" version "0.9.10"
+}
+
+wartremover {
+  warningWarts.removeElement('Throw')
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.apache.spark:spark-core_2.11:2.3.0'
+  implementation 'org.apache.spark:spark-sql_2.11:2.3.0'
+  implementation 'org.scala-lang:scala-library:2.11.8'
+
+  testImplementation 'org.testng:testng:7.0.0'
+}
+
+test {
+  // enable TestNG support (default is JUnit)
+  useTestNG()
+
+  // show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = true
+
+  // set heap size for the test JVM(s)
+  minHeapSize = "2g"
+  maxHeapSize = "4g"
+}

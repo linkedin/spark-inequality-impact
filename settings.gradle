@@ -1,0 +1,7 @@
+def modules = ['spark-inequality-impact']
+
+modules.each { module ->
+  include "${module}"
+}
+
+rootProject.name = 'spark-inequality-impact'
