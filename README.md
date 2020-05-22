@@ -1,6 +1,6 @@
 # spark-inequality-impact
 
-README.md revised 2020 May 21.
+README.md revised 2020 May 22.
 
 ## Overview
 
@@ -22,11 +22,12 @@ Step-by-step instructions are given in [setup.md](./setup.md).  To run the examp
 of the repo, the spark-inequality-impact directory (not to be confused with its subdirectory of the same name).
 
 ## Compute Atkinson index measure of inequality
-
+```bash
     # From the command prompt, start Spark running locally with 2 threads,
     # telling it where to get the spark-inequality-impact jar file.
     spark-shell --master 'local[2]' --jars ./spark-inequality-impact/build/libs/spark-inequality-impact.jar
-
+```
+```scala
     // Tell Spark where to get the spark-inequality-impact software,
     // including an AtkinsonAggregator UDAF and its return value class Atkinson.
     import com.linkedin.inequalityimpact.spark.{Atkinson, AtkinsonAggregator}
@@ -62,7 +63,7 @@ of the repo, the spark-inequality-impact directory (not to be confused with its 
     // Quit Spark shell, included here to show how to get back to the command
     // prompt.  No need to quit if you want to do other things.
     :q
-
+```
 - Summary: use UDAF for DataFrame with non-negative double "value" column,
 - result stored in an Atkinson object which
   - contains the Atkinson index
@@ -71,11 +72,12 @@ of the repo, the spark-inequality-impact directory (not to be confused with its 
   - is comparable by the Atkinson index
 
 ## Compare Atkinson indices from two sets of data
-
+```bash
     # From the command prompt, start Spark running locally with 2 threads,
     # telling it where to get the spark-inequality-impact jar file.
     spark-shell --master 'local[2]' --jars ./spark-inequality-impact/build/libs/spark-inequality-impact.jar
-
+```
+```scala
     // Tell Spark where to get the spark-inequality-impact software,
     // including an AtkinsonAggregator UDAF, its return value class Atkinson,
     // and the AtkinsonComparison object to use for inference.
@@ -123,7 +125,7 @@ of the repo, the spark-inequality-impact directory (not to be confused with its 
     // Quit Spark shell, included here to show how to get back to the command
     // prompt.  No need to quit if you want to do other things.
     :q
-
+```
 - Summary: get AtkinsonComparison object from two Atkinson objects.  When comparing<br>
   Atkinson indices of samples from two populations, you may want to know not only which<br>
   is larger and by how much, but also how likely (or not) it is that the populations<br>
@@ -142,9 +144,9 @@ of the repo, the spark-inequality-impact directory (not to be confused with its 
 To use the mathematical functions, after creating one or two DataFrame objects<br>
 with your own data, and computing their Atkinson indices and variances as above,<br>
 execute the following line in the spark shell:
-
+```scala
     import com.linkedin.inequalityimpact.spark.AtkinsonMathFunctions._
-
+```
 This will make the following functions available.  See also [AtkinsonMathFunctions.scala](./spark-inequality-impact/src/main/scala/com/linkedin/inequalityimpact/spark/AtkinsonMathFunctions.scala)<br>
 source code and (after building as in [setup.md](./setup.md)) the scaladoc at<br>
 `./spark-inequality-impact/build/docs/scaladoc/index.html`<br>for function specs, and [AtkinsonMathFunctionsTest.scala](./spark-inequality-impact/src/test/scala/com/linkedin/inequalityimpact/spark/AtkinsonMathFunctionsTest.scala) for test examples<br>of their use, from which you can copy and paste for your purposes.
