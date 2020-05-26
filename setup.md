@@ -1,6 +1,6 @@
 # Setup for and build spark-inequality-impact
 
-Revised 2020 May 22.
+Revised 2020 May 25.
 
 Tested on lubuntu 18.10 on ThinkPad W530, i7-3720QM @ 2.6 GHz, 4 cores, 24GB,<br>
 and on MacBook Pro, 2.4 GHz 8-core intel core i9, 32 GB, OS 10.15.2 and 10.15.4.
@@ -23,8 +23,8 @@ and on MacBook Pro, 2.4 GHz 8-core intel core i9, 32 GB, OS 10.15.2 and 10.15.4.
 ```
    setting
 ```bash
-        sdkman\_curl\_connect\_timeout=30
-        bsdkman\_curl\_max\_time=50
+        sdkman_curl_connect_timeout=30
+        bsdkman_curl_max_time=50
 ```
    then close the terminal window and open another to use.  Config change may<br>
    not be necessary when installing on the MacBook Pro on a corporate network.
